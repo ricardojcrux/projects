@@ -1,7 +1,10 @@
 from tkinter import *
+import keyboard
 
 valor,i,termino = 0,0,''
 z = 0
+def block(x):
+	return 'break'
 
 def barrido(x):
 	global z,i
@@ -98,6 +101,7 @@ window=Entry(calc)
 window.config(width=40, font=('led calculator',30), bg='black', fg='white' ,justify=RIGHT)
 window.insert(0,0)
 window.bind('<Button-1>',barrido)
+window.bind('<Key>',block)
 window.pack(padx=25, pady=10)
     
 first = Frame(calc)
