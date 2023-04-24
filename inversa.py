@@ -11,7 +11,8 @@ def inversa(matriz, determ):
     else:
         return (np.linalg.inv(matriz)*determ)
 
-valor = [input('Ingrese la lista de elementos, separada por comas: ') for x in range(3)]
+size = int(input('De que tamaño será la matriz: '))
+valor = [input(f'Ingrese la lista de {size} elementos, separada por comas: ') for x in range(size)]
 lista = [[int(y) for y in x.split(',')] for x in valor]
 
 matriz, determ = matriz(lista)
