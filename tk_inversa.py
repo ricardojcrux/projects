@@ -1,6 +1,5 @@
 import numpy as np
 from tkinter import *
-import time
 
 iterante = 0
 inter = 0
@@ -32,7 +31,6 @@ def check():
         label.insert(0,'El número es muy grande para nuestro proceso')
     else:
         label.insert(0,f'Cargando la matríz de {cond}x{cond}')
-        time.sleep(1)
         destruir(inter)
         matrices(cond)
         footer()
