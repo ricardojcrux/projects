@@ -1,6 +1,6 @@
 from tkinter import *
 from controller import *
-from PIL import ImageTk, Image
+from PIL import Image
 
 memoria = Tk()
 memoria.title('Juego de Parejas')
@@ -8,11 +8,9 @@ memoria.resizable(height=False, width=False)
 
 a = 4
 
-picture = Image.open('resources/backcard.png')
-picture = picture.resize((76,106))
-
-frames = frame(memoria,a)
-images = imagen(picture,a)
-labels = label(frames,images, a)
+images = imagen()
+labels = label(memoria,images, a)
+cards = random_cards()
+behind = behind_label(memoria,cards,a)
 
 memoria.mainloop()
