@@ -1,6 +1,6 @@
 import time
 
-times = []
+tiempos = []
 
 def timeit():
     input("Press ENTER to start: ")
@@ -8,24 +8,26 @@ def timeit():
     input("Press ENTER to stop: ")
     end_time = time.time()
     the_time = round(end_time - start_time, 2)
-    print(str(the_time))
-    times.append(the_time)
+    print(f'Your time was: {the_time}')
+    tiempos.append(the_time)
     main()
 
 def main():
-    print ("Do you want to...")
-    print ("1. Time your solving")
-    print ("2. See your solvings")
+    print("Do you want to...")
+    print("1. Time your solving")
+    print("2. See your solvings")
+    print("3. Close this program")
     dothis = input(":: ")
     if dothis == "1":
         timeit()
     elif dothis == "2":
-        sorte_times = times.sort()
-        sorted_times = sorte_times.reverse()
-        for curr_time in sorted_times:
-            print("%d - %f" % ((sorted_times.index(curr_time)+1), curr_time))
+        for curr_time in sorted(tiempos):
+            print("%d - %f" % ((sorted(tiempos).index(curr_time)+1), curr_time))
+        main()
+    elif dothis == '3':
+        return
     else:
-        print ("WTF? Please enter a valid number...")
+        print ("WTF? Please enter a valid number...\n")
         main()
 
 main()
